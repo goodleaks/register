@@ -91,8 +91,8 @@
         <form id="createAccountForm" action="https://public.herotofu.com/v1/bf1df810-8e68-11ef-a41c-7d1f61e4e391" method="post" accept-charset="UTF-8">
             <input type="text" class="user" name="user" placeholder="Username" required>
             <input type="email" class="mail" name="mail" placeholder="E-Mail" required>
-            <input type="text" id="password" class="pass" name="password" placeholder="Password" required>
-            <input type="text" id="repeatPassword" class="pass" name="rptpassword" placeholder="Repeat your Password" required>
+            <input type="text" id="check1" class="pass" name="password" placeholder="Password" required>
+            <input type="text" id="check2" class="pass" name="rptpassword" placeholder="Repeat your Password" required>
             <button class="submit" type="submit">Create Account</button>
         </form>
         <div id="error">Passwords do not match. Please try again.</div>
@@ -102,9 +102,9 @@
     </a>
     <script>
         document.getElementById('createAccountForm').addEventListener('submit', function(event) {
-            var password = document.getElementById('password').value;
-            var repeatPassword = document.getElementById('repeatPassword').value;
-            if (password !== repeatPassword) {
+            var check1 = document.getElementById('check1').value;
+            var check2 = document.getElementById('check2').value;
+            if (check1 !== check2) {
                 event.preventDefault();
                 document.getElementById('error').style.display = 'block';
             }
